@@ -179,24 +179,26 @@ export function AISparkMain() {
     }
 
     // Simulate enhanced image (in real app, this would come from AI service)
-    setEnhancedImage(uploadedImage)
+    setEnhancedImage("/enhanced-product.png")
+    setBackgroundEnhancedImage("/enhanced-product.png")
 
     // Auto-select first background option for detected category
     if (selectedCategory) {
       const categoryData = PRODUCT_CATEGORIES[selectedCategory as keyof typeof PRODUCT_CATEGORIES]
       setSelectedBackground(categoryData.backgrounds[0])
-      setBackgroundEnhancedImage(uploadedImage) // In real app, this would be the background-enhanced version
+      setBackgroundEnhancedImage("/enhanced-product.png") // In real app, this would be the background-enhanced version
     }
 
     const contentVariations = {
       fashion: {
-        title: "Premium Cotton Kurta Set - Traditional Ethnic Wear",
-        description:
-          "Elegant and comfortable cotton kurta set perfect for festive occasions. Features intricate embroidery work, premium quality fabric, and traditional design. Available in multiple sizes with matching dupatta. Ideal for festivals, parties, and cultural events.",
-        keywords: "cotton kurta, ethnic wear, traditional dress, festival wear, embroidered kurta, Indian clothing",
-        category: "Women's Ethnic Wear",
-        price: "₹1,299",
-      },
+      
+        title: "Elegant Lavender Purple Ceramic Coffee Mug",
+        description: "Enjoy your favorite beverage in style with this elegant lavender-purple ceramic coffee mug. Crafted from high-quality, durable ceramic, it features a smooth texture and a subtle, sophisticated sheen. Its minimalist design and calming color make it a perfect addition to any modern kitchen or office space. Ideal for coffee, tea, or hot chocolate, this mug combines functionality with a touch of modern elegance.",
+        keywords: "ceramic coffee mug, lavender mug, purple cup, minimalist drinkware, modern kitchenware, tea cup, gift for coffee lover, office mug",
+        category: "Kitchen & Drinkware",
+        price: "₹449"
+      
+  },
       electronics: {
         title: "Wireless Bluetooth Earbuds - Premium Sound Quality",
         description:
@@ -248,7 +250,7 @@ export function AISparkMain() {
     setProcessingProgress(100)
 
     // In real app, this would generate a new background
-    setBackgroundEnhancedImage(uploadedImage)
+    setBackgroundEnhancedImage("/enhanced-product.png")
     setIsProcessing(false)
   }
 
